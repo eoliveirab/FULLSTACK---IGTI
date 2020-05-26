@@ -1,2 +1,2 @@
 # FULLSTACK---IGTI
-Pratica &amp; Versionado
+Prática &amp; Versionado
