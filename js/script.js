@@ -20,6 +20,7 @@ function start() {
 
 
 function handleRangeChange(event) {
+    //console.log(event.target.value);
    var currentFrequency = event.target.value;
    inputFrequency.value = currentFrequency;
 
@@ -32,14 +33,14 @@ function handlePodcastsfrom(frequency) {
 
     var foundPodcast = null;
 
-    for (var i = 0; i < realPodcasts.length; i++) {
+   /*for (var i = 0; i < realPodcasts.length; i++) {
         var currentPodcast = realPodcasts[i];
 
         if (currentPodcast.id === frequency) {
             foundPodcast = currentPodcast;
             break; //para o for
         }
-    }
+    }*/
 
     renderPodcast(founPodcast);
 }
@@ -48,7 +49,9 @@ function handlePodcastsfrom(frequency) {
 function renderPodcast(podcast) {
     if (!podcast) {
         divPodcasts.innerHtml = 'Nenhum podcast encontrado';
-    } else {
+        return;
+    } 
+
        const img = document.createElement ('img');
        img.src = '../img/' + podcast.img;
 
@@ -63,5 +66,5 @@ function renderPodcast(podcast) {
        divPodcasts.appendChild(title);
        divPodcasts.appendChild(description);
 
-    }
+    
 }
